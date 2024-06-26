@@ -20,8 +20,14 @@ class PaymentMethod extends Model
     ];
 
     // Relationships
-    public function paymentTransactions()
-    {
-        return $this->hasMany(PaymentTransaction::class, 'payment_method_id');
-    }
+    // public function paymentTransactions()
+    // {
+    //     return $this->hasMany(PaymentTransaction::class, 'payment_method_id');
+    // }
+
+     // Relationships
+     public function paymentTransactions()
+     {
+         return $this->hasMany(PaymentTransaction::class, 'payment_method_id', 'payment_method_id');
+     }
 }

@@ -22,18 +22,34 @@ class PaymentTransaction extends Model
     ];
 
     // Relationships
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+
+    // public function paymentMethod()
+    // {
+    //     return $this->belongsTo(PaymentMethod::class);
+    // }
+
+    // public function discount()
+    // {
+    //     return $this->belongsTo(Discount::class);
+    // }
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 
     public function paymentMethod()
     {
-        return $this->belongsTo(PaymentMethod::class);
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id', 'payment_method_id');
     }
 
     public function discount()
     {
-        return $this->belongsTo(Discount::class);
+        return $this->belongsTo(Discount::class, 'discount_id', 'discount_id');
     }
 }
+
+

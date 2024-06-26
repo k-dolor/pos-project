@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->string('quantity', 55);
             $table->string('total',55);
+            $table->decimal('discount', 8, 2)->nullable();
             $table->timestamps();
 
 

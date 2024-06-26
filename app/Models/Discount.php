@@ -21,8 +21,19 @@ class Discount extends Model
     ];
 
     // Relationships
-    public function paymentTransactions()
+    // public function paymentTransactions()
+    // {
+    //     return $this->hasMany(PaymentTransaction::class, 'discount_id');
+    // }
+     // Relationships
+     public function paymentTransactions()
+     {
+         return $this->hasMany(PaymentTransaction::class, 'discount_id', 'discount_id');
+     }
+ 
+
+    public function transactions()
     {
-        return $this->hasMany(PaymentTransaction::class, 'discount_id');
+        return $this->hasMany(Transaction::class);
     }
 }

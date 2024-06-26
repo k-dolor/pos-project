@@ -8,6 +8,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentTransactionController;
+use App\Http\Controllers\TransactionController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -99,9 +100,11 @@ Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::post('/receipt', [CartController::class, 'receipt'])->name('receipt');
 
 
-//P.Transaciton---------------//
+//Payment.Transaciton---------------//
 Route::get('/payment-transactions', [PaymentTransactionController::class, 'index'])->name('payment-transactions.index');
 
+//-------Transaction ROUTES -------//
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 
 });
 

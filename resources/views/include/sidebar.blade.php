@@ -88,14 +88,14 @@
                             Transactions
                         </a>
                         <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-                            <li class="sidebar-item">
+                            {{-- <li class="sidebar-item">
                                 <a href="{{ url('/payment-transactions') }}" class="sidebar-link">List</a>
+                            </li> --}}
+                            <li class="sidebar-item">
+                                <a href="{{ url('/transactions') }}" class="sidebar-link">History</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Payments</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">History</a>
+                                <a href="{{ url('/transaction-id') }}" class="sidebar-link">Payments</a>
                             </li>
                         </ul>
                     </li>
