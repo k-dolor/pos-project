@@ -19,7 +19,6 @@ Route::post('/user/process/login', [UserController::class, 'processLogin']);
 
 // Authenticated Routes
 Route::group(['middleware' => 'auth'], function() {
-
     // ------------Home--------------
     Route::get('/home', [HomeController::class, 'home']);
 
@@ -39,7 +38,7 @@ Route::controller(UserController::class)->group(function() {
     Route::put('/user/update/{user}','update');
     Route::delete('/user/destroy/{user}','destroy');
 
-});
+    });
 
     //--------GENDERS ROUTESS
     Route::controller(GenderController::class)->group(function() {
@@ -100,7 +99,7 @@ Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::post('/receipt', [CartController::class, 'receipt'])->name('receipt');
 
 
-//Payment.Transaciton---------------//
+//Payment.Transaciton ID'S---------------//
 Route::get('/payment-transactions', [PaymentTransactionController::class, 'index'])->name('payment-transactions.index');
 
 //-------Transaction ROUTES -------//
