@@ -48,11 +48,11 @@
                     <span>Admin</span>
                 </a>
                 <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item">
+                    {{-- <li class="sidebar-item">
                         <a href="#" class="sidebar-link">Login</a>
-                    </li>
+                    </li> --}}
                     <li class="sidebar-item">
-                        <a href="{{ url('/users') }}" class="sidebar-link">List of Users</a>
+                        <a href="{{ url('/users') }}" class="sidebar-link">Users</a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ url('/roles') }}" class="sidebar-link">Roles</a>
@@ -70,9 +70,8 @@
                       </svg>
                     <span>Suppliers</span>
                 </a>
-            </li>
-            
-            <li class="sidebar-item">
+            </li>     
+            {{-- <li class="sidebar-item">
                 <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                     data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
@@ -80,27 +79,28 @@
                         <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1zM1 4v10a1 1 0 0 0 1 1h2V4zm4 0v11h9a1 1 0 0 0 1-1V4z"/>
                     </svg>
                     <span>Management</span>
-                </a>
-                <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
-                            Transactions
-                        </a>
-                        <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-                            {{-- <li class="sidebar-item">
-                                <a href="{{ url('/payment-transactions') }}" class="sidebar-link">List</a>
-                            </li> --}}
-                            <li class="sidebar-item">
-                                <a href="{{ url('/transactions') }}" class="sidebar-link">History</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="{{ url('/transaction-id') }}" class="sidebar-link">Payments</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+                </a> --}}
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#transaction" aria-expanded="false" aria-controls="transaction">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
+                            <path d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/>
+                            <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1zM1 4v10a1 1 0 0 0 1 1h2V4zm4 0v11h9a1 1 0 0 0 1-1V4z"/>
+                        </svg>
+                        <span>Management</span>
+                    </a>
+                    <ul id="transaction" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url('/transactions') }}" class="sidebar-link">History</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url('/transaction-id') }}" class="sidebar-link">Payments</a>
+                        </li>
+                    </ul>
+                </li>
+             </li>
+           </ul>
+         </li>
             {{-- <li class="sidebar-item">
                 <a href="#" class="sidebar-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
@@ -277,7 +277,7 @@
 
     .sidebar-logo a {
     color: #ffffff;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     text-decoration: none; /* Add this line */
 }

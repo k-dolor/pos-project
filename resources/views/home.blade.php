@@ -49,6 +49,18 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4 mt-5 ml-2">
+        <div class="card text-dark mb-3" style="background-color: #f5d7c3; opacity: 0.9; height: 200px; width: 400px;">
+            <div class="card-header" style="font-family: 'Bell MT', sans-serif; font-size: 25px;">Total Transactions</div>
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <h5 class="card-title" style="font-family: 'Bell MT', sans-serif; font-size: 35px;">{{ $totalTransactions }}</h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                  </svg>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 

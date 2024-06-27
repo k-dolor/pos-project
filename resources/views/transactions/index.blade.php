@@ -39,6 +39,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="pagination justify-content-end mt-2">
+            {{ $transactions->links() }}
+        </div>
     </div>
 </div>
 

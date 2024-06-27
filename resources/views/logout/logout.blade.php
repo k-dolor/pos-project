@@ -8,7 +8,7 @@
         <div class="mt-4 text-center">
             <img src="{{ asset('uploads/album.png') }}" alt="Logo" style="max-width: 250px;">
         </div>
-        <form action="/user/process/logout" method="get">
+        <form action="/logout" method="post">
         <h3 class="mt-3 mb-5 text-center" style="font-family: 'Bell MT'; font-size: 42px;">Are you sure you want to logout?</h3>
         <div class="row">
             <div class="col-6">

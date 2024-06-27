@@ -14,16 +14,16 @@ use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 // Login Routes
-Route::get('/', [UserController::class, 'login'])->name('login');
-Route::post('/user/process/login', [UserController::class, 'processLogin']);
+ Route::get('/', [UserController::class, 'login'])->name('login');
+ Route::post('/user/process/login', [UserController::class, 'processLogin']);
 
 // Authenticated Routes
-Route::group(['middleware' => 'auth'], function() {
+ Route::group(['middleware' => 'auth'], function() {
     // ------------Home--------------
     Route::get('/home', [HomeController::class, 'home']);
 
     // ------------User ----------------------
-Route::controller(UserController::class)->group(function() {
+ Route::controller(UserController::class)->group(function() {
     Route::get('/users', 'list');
     Route::get('/users/show/{id}', 'show');
     Route::get('/users/create', 'create');
@@ -33,7 +33,7 @@ Route::controller(UserController::class)->group(function() {
     Route::get('/users/search', 'search')->name('users.search');
     
     Route::post('/user/store', 'store');
-    Route::post('/process/logout', 'processLogout');
+    Route::get('/user/process/logout', 'processLogout');
 
     Route::put('/user/update/{user}','update');
     Route::delete('/user/destroy/{user}','destroy');
@@ -41,29 +41,32 @@ Route::controller(UserController::class)->group(function() {
     });
 
     //--------GENDERS ROUTESS
-    Route::controller(GenderController::class)->group(function() {
-        Route::get('/genders', 'list'); 
-        Route::get('/gender/create', 'create');
-        Route::get('/gender/show/{id}', 'show');
-        Route::get('/gender/edit/{id}', 'edit');
-        Route::get('/gender/delete/{id}', 'delete');
-
-        Route::post('/gender/store', 'store');
-        Route::put('/gender/update/{gender}', 'update');
-        Route::delete('/gender/destroy/{gender}', 'destroy');
+ Route::controller(GenderController::class)->group(function() {
+    Route::get('/genders', 'list'); 
+    Route::get('/gender/create', 'create');
+    Route::get('/gender/show/{id}', 'show');
+    Route::get('/gender/edit/{id}', 'edit');
+    Route::get('/gender/delete/{id}', 'delete');
+    Route::post('/gender/store', 'store');
+    Route::put('/gender/update/{gender}', 'update');
+    Route::delete('/gender/destroy/{gender}', 'destroy');
     });
 
-//-------ROLE ROUTES----------
-Route::get('/roles', [RoleController::class, 'list']); 
-Route::get('/role/create', [RoleController::class, 'create']);
-Route::get('/role/show/{id}', [RoleController::class, 'show']);
-Route::get('/role/edit/{id}', [RoleController::class, 'edit']);
-Route::get('/role/delete/{id}', [RoleController::class, 'delete']);
+    //-------ROLE ROUTES----------
+    Route::controller(RoleController::class)->group(function() {
+        Route::get('/roles','list'); 
+        Route::get('/role/create','create');
+        Route::get('/role/show/{id}','show');
+        Route::get('/role/edit/{id}','edit');
+        Route::get('/role/delete/{id}','delete');
 
 
-Route::post('/role/store', [RoleController::class, 'store']);
-Route::put('/role/update/{role}', [RoleController::class, 'update']);
-Route::delete('/role/destroy/{role}', [RoleController::class, 'destroy']);
+        Route::post('/role/store','store');
+        Route::put('/role/update/{role}','update');
+        Route::delete('/role/destroy/{role}','destroy');
+
+    });
+
 
 
 //-------PRODUCT ROUTES -------//
@@ -99,11 +102,11 @@ Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::post('/receipt', [CartController::class, 'receipt'])->name('receipt');
 
 
-//Payment.Transaciton ID'S---------------//
-Route::get('/payment-transactions', [PaymentTransactionController::class, 'index'])->name('payment-transactions.index');
+ //Payment.Transaciton ID'S---------------//
+ Route::get('/transaction-id', [PaymentTransactionController::class, 'index'])->name('payment-transactions.index');
 
-//-------Transaction ROUTES -------//
-Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+ //-------Transaction ROUTES -------//
+ Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 
 });
 
